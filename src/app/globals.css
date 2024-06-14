@@ -2,4 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hide scrollbar for chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+}
+
+@layer utilities {
+    .text-10 {
+        @apply text-[10px] leading-[14px];
+    }
+    
+    .text-12 {
+        @apply text-[12px] leading-[16px];
+    }
+    
+    .text-14 {
+        @apply text-[14px] leading-[20px];
+    }
+    
+    .text-16 {
+        @apply text-[16px] leading-[24px];
+    }
+    
+    .text-18 {
+        @apply text-[18px] leading-[22px];
+    }
+    
+    .text-20 {
+        @apply text-[20px] leading-[24px];
+    }
+    
+    .text-24 {
+        @apply text-[24px] leading-[30px];
+    }
+    
+    .text-26 {
+        @apply text-[26px] leading-[32px];
+    }
+    
+    .text-30 {
+        @apply text-[30px] leading-[38px];
+    }
+    
+    .text-36 {
+        @apply text-[36px] leading-[44px];
+    }
+    
+    /* Home */
+    .home {
+        @apply no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
+    }
+
+    .home-content {
+        @apply no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-y-scroll;
+    }
+
+    .home-header {
+        @apply flex flex-col justify-between gap-8;
+    }
+
+    .header-box {
+        @apply flex flex-col gap-1;
+    }
+
+    .header-box-title {
+        @apply text-24 lg:text-30 font-semibold text-gray-900;
+    }
+    
+    .header-box-subtext {
+        @apply text-14 lg:text-16 font-normal text-gray-600;
+    }
+}
