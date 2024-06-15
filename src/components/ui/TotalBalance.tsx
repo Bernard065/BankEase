@@ -1,5 +1,6 @@
 import { formatAmount } from '@/lib/utils'
 import React from 'react'
+import DoughnutChart from './DoughnutChart'
 
 const TotalBalance = ({ 
     accounts = [], totalBankAccounts, totalCurrentBalance 
@@ -8,6 +9,7 @@ const TotalBalance = ({
     <section className='total-balance'>
         <div className='total-balance-chart'>
             {/* Chart */}
+            <DoughnutChart accounts={accounts} />
         </div>
 
         <div className='flex flex-col gap-6'>

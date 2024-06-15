@@ -10,3 +10,7 @@ declare interface TotalBalanceProps {
     totalBankAccounts: number;
     totalCurrentBalance: number;
 }
+
+declare interface DoughnutChartProps {
+    accounts: Account[];
+}
