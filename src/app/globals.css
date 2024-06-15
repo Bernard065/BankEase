@@ -84,7 +84,15 @@
     .text-36 {
         @apply text-[36px] leading-[44px];
     }
+
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
     
+    .header-2 {
+        @apply text-18 font-semibold text-gray-900;
+    }
+
     /* Home */
     .home {
         @apply no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
@@ -109,4 +117,21 @@
     .header-box-subtext {
         @apply text-14 lg:text-16 font-normal text-gray-600;
     }
+
+    .total-balance {
+        @apply flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6;
+    }
+
+    .total-balance-chart {
+        @apply flex size-full max-w-[100px] items-center sm:max-w-[120px];
+    }
+    
+    .total-balance-label {
+        @apply text-14 font-medium text-gray-600;
+    }
+    
+    .total-balance-amount {
+        @apply text-24 lg:text-30 flex-1 font-semibold text-gray-900;
+    }
+    
 }

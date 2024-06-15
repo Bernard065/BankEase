@@ -4,3 +4,9 @@ declare interface HeaderProps {
     user?: string;
     subtext: string;
 }
+
+declare interface TotalBalanceProps {
+    accounts: Account[]; 
+    totalBankAccounts: number;
+    totalCurrentBalance: number;
+}
