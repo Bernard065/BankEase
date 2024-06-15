@@ -1,6 +1,7 @@
-import { formatAmount } from '@/lib/utils'
+// import { formatAmount } from '@/lib/utils'
 import React from 'react'
 import DoughnutChart from './DoughnutChart'
+import AmountAnimate from './AmountAnimate'
 
 const TotalBalance = ({ 
     accounts = [], totalBankAccounts, totalCurrentBalance 
@@ -22,7 +23,8 @@ const TotalBalance = ({
                 </p>
                 
                 <p className='total-balance-amount flex-center gap-2'>
-                    {formatAmount(totalCurrentBalance)}
+                    {/* {formatAmount(totalCurrentBalance)} */}
+                    <AmountAnimate amount={totalCurrentBalance} />
                 </p>
             </div>
         </div>
