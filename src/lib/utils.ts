@@ -13,3 +13,5 @@ export function formatAmount(amount: number): string {
   });
   return formatter.format(amount);
 }
+
+export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));

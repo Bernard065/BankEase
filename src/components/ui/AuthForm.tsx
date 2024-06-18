@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import CustomInput from './CustomInput'
 import { Loader, Loader2 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { signIn, signUp } from '@/lib/actions/user.actions'
 
 const formSchema = (type: string) => z.object({
     email: z.string().email(),
@@ -25,9 +27,11 @@ const formSchema = (type: string) => z.object({
 
 
 const AuthForm = ({ type }: { type: string }) => {
+    const router = useRouter();
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-
+   
+    
     const schema = formSchema(type);
     const form = useForm<z.infer<typeof schema>>({
         resolver: zodResolver(schema),
@@ -45,12 +49,31 @@ const AuthForm = ({ type }: { type: string }) => {
     })
      
       // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof schema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
+    const onSubmit = async (data: z.infer<typeof schema>) => {
         setIsLoading(true);
-        console.log(values)
-        setIsLoading(false);
+        
+        try {
+            // Sign up with Appwrite
+
+            if(type === 'sign-up') {
+                const newUser = await signUp(data);
+
+                setUser(newUser);
+            }
+
+            if(type === 'sign-in') {
+                // const response = await signIn({
+                //     email: data.email,
+                //     password: data.password,
+                // })
+
+                // if(response) router.push('/')
+            } 
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false)
+        }
     }
 
   return (
