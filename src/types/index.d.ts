@@ -64,3 +64,11 @@ declare interface SignInProps {
     email: string;
     password: string;
 }
+
+declare interface MobileNavProps {
+    user: User;
+}
+declare interface FooterProps {
+    user: User;
+    type?: 'mobile' | 'desktop'
+}
