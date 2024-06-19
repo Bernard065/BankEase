@@ -6,12 +6,11 @@ declare type User = {
     dwollaCustomerId: string;
     firstName: string;
     lastName: string;
-    address1: string;
-    city: string;
+    address: string;
     state: string;
     postalCode: string;
     dateOfBirth: string;
-    ssn: string;
+    kra: string;
 
 }
 
@@ -59,3 +58,8 @@ declare type SignUpParams = {
     email: string;
     password: string;
 };
+
+declare interface SignInProps {
+    email: string;
+    password: string;
+}

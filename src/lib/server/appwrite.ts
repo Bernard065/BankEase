@@ -3,6 +3,7 @@
 
 import { Client, Account, Databases, Users } from "node-appwrite";
 import { cookies } from "next/headers";
+import { parseStringify } from "../utils";
 
 export async function createSessionClient() {
   const client = new Client()
@@ -48,7 +49,10 @@ export async function createAdminClient() {
 export async function getLoggedInUser() {
   try {
     const { account } = await createSessionClient();
-    return await account.get();
+
+    const user = await account.get();
+
+    return parseStringify(user);
   } catch (error) {
     return null;
   }
